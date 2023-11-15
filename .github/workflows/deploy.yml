@@ -35,7 +35,7 @@ jobs:
       with:
         switches: -avzr --delete
         path: .
-        remote_path: /src/dev/ghactionspipeline
+        remote_path: /srv/dev/ghactionspipeline
         remote_host: ${{ secrets.SSH_HOST }}
         remote_port: 22
         remote_user: ${{ secrets.SSH_USER }}
