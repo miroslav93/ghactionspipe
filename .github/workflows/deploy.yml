@@ -40,3 +40,14 @@ jobs:
         remote_port: 22
         remote_user: ${{ secrets.SSH_USER }}
         remote_key: ${{ secrets.SSH_PRIVATE_KEY }}
+          
+    - name: executing remote ssh commands using password
+      uses: appleboy/ssh-action@v1.0.0
+      with:
+        host: ${{ secrets.SSH_HOST }}
+        username: ${{ secrets.SSH_USER }}
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
+        port: 22
+        script: |
+          cat /srv/dev/ghactionspipeline/file.txt
+          touch /srv/dev/ghactionspipeline/file2.txt
